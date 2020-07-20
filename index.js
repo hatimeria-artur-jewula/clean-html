@@ -156,6 +156,10 @@ function isEmpty(node) {
         return !node.data.trim();
     }
 
+    if (node.name === 'iframe') {
+        return !node.attribs.src.trim()
+    }
+
     return !node.children.length || node.children.every(isEmpty);
 }
 
